@@ -1,9 +1,9 @@
-package com.ys.rabbitmq.controller;
+package com.ys.rabbitmq.configversion.controller;
 
-import com.ys.rabbitmq.commons.R;
-import com.ys.rabbitmq.send.DirectSender;
-import com.ys.rabbitmq.send.FanoutSender;
-import com.ys.rabbitmq.send.TopicSender;
+import com.ys.rabbitmq.configversion.commons.R;
+import com.ys.rabbitmq.configversion.send.DirectSender;
+import com.ys.rabbitmq.configversion.send.FanoutSender;
+import com.ys.rabbitmq.configversion.send.TopicSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

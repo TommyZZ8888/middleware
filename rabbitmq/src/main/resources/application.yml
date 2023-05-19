@@ -1,0 +1,22 @@
+server:
+    port: 9999
+spring:
+    rabbitmq:
+        host: 172.16.25.234
+        username: guest
+        password: guest
+        virtual-host: /
+mq:
+    direct:
+        exchange:
+            direct
+        queue:
+            log.info
+        routingKey:
+            routing.key
+    topic:
+        exchange:
+            topic
+    fanout:
+        exchange:
+            fanout

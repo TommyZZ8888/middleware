@@ -1,4 +1,4 @@
-package com.ys.rabbitmq.commons;
+package com.ys.rabbitmq.configversion.commons;
 
 import lombok.Data;
 

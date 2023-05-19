@@ -1,6 +1,6 @@
-package com.ys.rabbitmq.receive;
+package com.ys.rabbitmq.configversion.receive;
 
-import com.ys.rabbitmq.config.RabbitMQDirectConfig;
+import com.ys.rabbitmq.configversion.config.RabbitMQDirectConfig;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 

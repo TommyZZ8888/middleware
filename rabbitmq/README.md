@@ -50,10 +50,13 @@
  
 - Direct模式（常用）
   - Direct exchange完全根据key进行投递，只有key与绑定时的routing-key完全一致的消息才会收到消息。
+  - ![](src/main/resources/static/images/direct.png)
 - Topic模式（常用）
   - Topic exchange会根据key进行模式匹配然后进行投递，与设置的routing-key匹配上的队列才能收到消息。
+  - ![](src/main/resources/static/images/topic.png)
 - Fanout模式
   - 每个发到fanout类型交换器的消息都会分到所有绑定的队列上去。fanout交换器不处理路由键，只是简单的将队列绑定到交换器上，每个发送到交换器的消息都会被转发到与该交换器绑定的所有队列上。
+  - ![](src/main/resources/static/images/fanout.png)
 - Header模式（不常用）
   - 不太常用，可以自定义匹配规则。
   

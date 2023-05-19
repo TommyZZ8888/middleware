@@ -1,6 +1,6 @@
-package com.ys.rabbitmq.send;
+package com.ys.rabbitmq.configversion.send;
 
-import com.ys.rabbitmq.config.RabbitMQDirectConfig;
+import com.ys.rabbitmq.configversion.config.RabbitMQDirectConfig;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
