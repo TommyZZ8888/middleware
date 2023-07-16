@@ -7,14 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="rabbitmq" />
+        <module name="kafka" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="kafka" target="11" />
       <module name="rabbitmq" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="kafka" options="-parameters" />
       <module name="rabbitmq" options="-parameters" />
     </option>
   </component>
