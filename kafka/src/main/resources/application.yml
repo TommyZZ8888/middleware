@@ -1,12 +1,5 @@
-sping:
-    kafka:
-        bootstrap-servers: localhost:9092
-        consumer:
-            groupId: my-group
-            autoOffsetReset: earliest
-        producer:
-            value-serializer: org.apache.kafka.common.serialization.StringSerializer
-            key-serializer: org.apache.kafka.common.serialization.StringSerializer
-kafka:
-    topic: kafka_topic
-
+server:
+    port: 5001
+spring:
+    profiles:
+        active: test

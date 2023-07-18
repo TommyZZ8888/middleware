@@ -1,0 +1,8 @@
+kafka:
+    topic: kafka_topic
+spring:
+    kafka:
+        bootstrap-servers: localhost:9092
+        consumer:
+            group-id: my-group
+            auto-offset-reset: earliest
