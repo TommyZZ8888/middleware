@@ -41,23 +41,23 @@ public class PublishService {
     }
 
 
-    @Bean
-    CommandLineRunner commandLineRunner(){
-        return args -> {
-            Jedis jedis = RedisUtils.getJedis();
-            JedisSubscribeListener jedisSubscribeListener = new JedisSubscribeListener();
-            jedis.subscribe(jedisSubscribeListener,"jedisChannel");
-
-            TimeUnit.SECONDS.sleep(3);
-
-            jedisPublish("jedisChannel","hello redis");
-            TimeUnit.SECONDS.sleep(3);
-
-            jedisSubscribeListener.unsubscribe("jedisChannel");
-
-
-        };
-    }
+//    @Bean
+//    CommandLineRunner commandLineRunner(){
+//        return args -> {
+//            Jedis jedis = RedisUtils.getJedis();
+//            JedisSubscribeListener jedisSubscribeListener = new JedisSubscribeListener();
+//            jedis.subscribe(jedisSubscribeListener,"jedisChannel");
+//
+//            TimeUnit.SECONDS.sleep(3);
+//
+//            jedisPublish("jedisChannel","hello redis");
+//            TimeUnit.SECONDS.sleep(3);
+//
+//            jedisSubscribeListener.unsubscribe("jedisChannel");
+//
+//
+//        };
+//    }
 
 
 }

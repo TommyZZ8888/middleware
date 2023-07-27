@@ -28,7 +28,7 @@ public class RedisStreamTest {
 
     private static final String redisKey = "rediscom";
 
-
+    //windows redis版本低，不支持 需版本5.0以上
     public RecordId xAdd(String key, Map<String, Object> content) {
         return redisTemplate.opsForStream().add(key, content);
     }
