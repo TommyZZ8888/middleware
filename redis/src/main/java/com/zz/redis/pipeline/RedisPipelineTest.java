@@ -30,12 +30,14 @@ public class RedisPipelineTest {
 
 
     public void setExPipeline(Map<String, String> map, long expireTime) {
-//        RedisSerializer<String> stringSerializer = redisTemplate.getStringSerializer();
+        RedisSerializer<String> stringSerializer = redisTemplate.getStringSerializer();
         redisTemplate.executePipelined((RedisCallback<Object>) connection -> {
             for (Map.Entry<String, String> entry : map.entrySet()) {
 //                stringSerializer.serialize(entry.getKey())
-                connection.setEx(entry.getKey().getBytes(), expireTime,
-                        entry.getValue().getBytes());
+                connection.setEx(stringSerializer.serialize(entry.getKey()), expireTime,
+                        stringSerializer.serialize(entry.getValue()));
+//                connection.setEx(entry.getKey().getBytes(), expireTime,
+//                        entry.getValue().getBytes());
             }
             return null;
         });
@@ -54,6 +56,7 @@ public class RedisPipelineTest {
             }
         });
     }
+
 
 
     @Bean

@@ -17,7 +17,7 @@ import java.util.Collections;
  * @Author 张卫刚
  * @Date Created on 2023/7/27
  */
-@Component
+//@Component
 public class LuaScriptTest {
 
     @Autowired
