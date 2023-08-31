@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/kafka/pom.xml" />
         <option value="$PROJECT_DIR$/r/redis/pom.xml" />
         <option value="$PROJECT_DIR$/redis/pom.xml" />
+        <option value="$PROJECT_DIR$/elasticsearch/pom.xml" />
       </list>
     </option>
   </component>
