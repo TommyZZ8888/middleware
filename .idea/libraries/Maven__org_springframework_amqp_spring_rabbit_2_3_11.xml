@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.springframework.amqp:spring-rabbit:2.3.11">
     <CLASSES>
-      <root url="jar://D:/repo/org/springframework/amqp/spring-rabbit/2.3.11/spring-rabbit-2.3.11.jar!/" />
+      <root url="jar://D:/Java/maven/apache-maven-3.8.1/maven_repo/org/springframework/amqp/spring-rabbit/2.3.11/spring-rabbit-2.3.11.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://D:/repo/org/springframework/amqp/spring-rabbit/2.3.11/spring-rabbit-2.3.11-javadoc.jar!/" />
+      <root url="jar://D:/Java/maven/apache-maven-3.8.1/maven_repo/org/springframework/amqp/spring-rabbit/2.3.11/spring-rabbit-2.3.11-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://D:/repo/org/springframework/amqp/spring-rabbit/2.3.11/spring-rabbit-2.3.11-sources.jar!/" />
+      <root url="jar://D:/Java/maven/apache-maven-3.8.1/maven_repo/org/springframework/amqp/spring-rabbit/2.3.11/spring-rabbit-2.3.11-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

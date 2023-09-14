@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.springframework.kafka:spring-kafka:2.8.0">
     <CLASSES>
-      <root url="jar://D:/repo/org/springframework/kafka/spring-kafka/2.8.0/spring-kafka-2.8.0.jar!/" />
+      <root url="jar://D:/Java/maven/apache-maven-3.8.1/maven_repo/org/springframework/kafka/spring-kafka/2.8.0/spring-kafka-2.8.0.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://D:/repo/org/springframework/kafka/spring-kafka/2.8.0/spring-kafka-2.8.0-javadoc.jar!/" />
+      <root url="jar://D:/Java/maven/apache-maven-3.8.1/maven_repo/org/springframework/kafka/spring-kafka/2.8.0/spring-kafka-2.8.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://D:/repo/org/springframework/kafka/spring-kafka/2.8.0/spring-kafka-2.8.0-sources.jar!/" />
+      <root url="jar://D:/Java/maven/apache-maven-3.8.1/maven_repo/org/springframework/kafka/spring-kafka/2.8.0/spring-kafka-2.8.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
