@@ -10,6 +10,9 @@
         <option value="$PROJECT_DIR$/r/redis/pom.xml" />
         <option value="$PROJECT_DIR$/redis/pom.xml" />
         <option value="$PROJECT_DIR$/elasticsearch/pom.xml" />
+        <option value="$PROJECT_DIR$/cannal/cannal/pom.xml" />
+        <option value="$PROJECT_DIR$/cannal/pom.xml" />
+        <option value="$PROJECT_DIR$/canal/pom.xml" />
       </list>
     </option>
   </component>
@@ -18,10 +21,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="jpab" />
-  </component>
-  <component name="SwUserDefinedSpecifications">
-    <option name="specTypeByUrl">
-      <map />
-    </option>
   </component>
 </project>

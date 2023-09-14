@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="canal" />
         <module name="elasticsearch" />
         <module name="rabbitmq" />
         <module name="redis" />
@@ -14,6 +15,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="canal" target="11" />
       <module name="elasticsearch" target="11" />
       <module name="kafka" target="1.8" />
       <module name="rabbitmq" target="11" />
@@ -22,6 +24,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="canal" options="-parameters" />
       <module name="elasticsearch" options="-parameters" />
       <module name="kafka" options="-parameters" />
       <module name="rabbitmq" options="-parameters" />
