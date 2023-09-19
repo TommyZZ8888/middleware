@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/cannal/cannal/pom.xml" />
         <option value="$PROJECT_DIR$/cannal/pom.xml" />
         <option value="$PROJECT_DIR$/canal/pom.xml" />
+        <option value="$PROJECT_DIR$/mqtt/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,0 +1,15 @@
+## MQTT##
+mqtt:
+    host: tcp://192.168.10.198:1883
+    userName: root
+    passWord: 123456
+    qos: 1
+    clientId: ClientId_local #ClientId_local必须唯一 比如你已经定了叫ABC  那你就一直叫ABC  其他地方就不要使用ABC了
+    timeout: 10
+    keepalive: 20
+    topic1: A/pick/warn/#  #符号是代表整个warn下面的全部子主题 没有理解的话 可以百度仔细理解一下
+    topic2: A/cmd/resp
+    topic3: ABCF
+    topic4: ABCH
+server:
+    port: 9009
