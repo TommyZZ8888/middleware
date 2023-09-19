@@ -1,11 +1,11 @@
-package com.zz.canal.client.client.transponder;
+package com.zz.canal.client.client.transfer;
 
 import com.alibaba.otter.canal.client.CanalConnector;
 import com.alibaba.otter.canal.protocol.Message;
-import com.zz.canal.client.annotation.CanalEventListener;
 import com.zz.canal.client.client.ListenerPoint;
 import com.zz.canal.client.config.CanalConfig;
-import com.zz.canal.client.exception.CanalClientException;
+import com.zz.canal.client.client.exception.CanalClientException;
+import com.zz.canal.client.event.CanalEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

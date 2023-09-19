@@ -2,6 +2,7 @@ package com.zz.canal.client.listener;
 
 import com.alibaba.otter.canal.protocol.CanalEntry;
 import com.zz.canal.client.annotation.*;
+import com.zz.canal.client.annotation.CanalEventListener;
 
 import java.util.List;
 

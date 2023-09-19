@@ -2,9 +2,9 @@ package com.zz.canal.client.client;
 
 import com.alibaba.otter.canal.client.CanalConnector;
 import com.alibaba.otter.canal.client.CanalConnectors;
-import com.zz.canal.client.client.transponder.TransponderFactory;
+import com.zz.canal.client.client.transfer.TransponderFactory;
 import com.zz.canal.client.config.CanalConfig;
-import com.zz.canal.client.exception.CanalClientException;
+import com.zz.canal.client.client.exception.CanalClientException;
 import org.apache.commons.lang.StringUtils;
 
 import java.net.InetSocketAddress;

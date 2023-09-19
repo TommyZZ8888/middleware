@@ -1,4 +1,4 @@
-package com.zz.canal.client.utils;
+package com.zz.canal.client.client.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

@@ -1,0 +1,40 @@
+canal:
+  client:
+      instance:
+          example:
+              host: 127.0.0.1
+              port: 11111
+              batchSize: 100
+              userName: canal
+              password: admin
+
+server:
+    port: 11110
+spring:
+    datasource:
+        druid:
+            username: root
+            password: 123456
+            url: jdbc:mysql:127.0.0.1:3306/security_test?useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai
+            driver: com.mysql.cj.jdbc.Driver
+            max-active: 20
+            initial-size: 10
+            min-idle: 5
+            max-wait: 60000
+            pool-prepared-statements: true
+            validation-query: SELECT 1
+            time-between-eviction-runs-millis: 60000
+            min-evictable-idle-time-millis: 300000
+            max-pool-prepared-statement-per-connection-size: 20
+            use-global-data-source-stat: true
+            filters: stat
+            filter:
+                stat:
+                    log-slow-sql: true
+                    slow-sql-millis: 2000
+            stat-view-servlet:
+                enabled: true
+                url-pattern: /druid/*
+                reset-enable: true
+                login-username: root
+                login-password: root

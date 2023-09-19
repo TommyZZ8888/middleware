@@ -1,4 +1,4 @@
-package com.zz.canal.client.exception;
+package com.zz.canal.client.client.exception;
 
 /**
  * @Describtion: CanalClientException

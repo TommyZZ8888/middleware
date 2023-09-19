@@ -1,4 +1,4 @@
-package com.zz.canal.client.client.transponder;
+package com.zz.canal.client.client.transfer;
 
 import com.alibaba.otter.canal.client.CanalConnector;
 import com.zz.canal.client.annotation.CanalEventListener;
