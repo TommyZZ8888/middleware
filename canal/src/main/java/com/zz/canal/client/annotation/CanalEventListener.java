@@ -1,5 +1,6 @@
 package com.zz.canal.client.annotation;
 
+import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.*;
@@ -15,5 +16,6 @@ import java.lang.annotation.*;
 @Component
 public @interface CanalEventListener {
 
+    @AliasFor(annotation = Component.class)
     String value() default "";
 }

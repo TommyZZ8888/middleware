@@ -1,9 +1,9 @@
 package com.zz.canal.client.client.transfer;
 
 import com.alibaba.otter.canal.client.CanalConnector;
-import com.zz.canal.client.annotation.CanalEventListener;
 import com.zz.canal.client.client.ListenerPoint;
 import com.zz.canal.client.config.CanalConfig;
+import com.zz.canal.client.event.CanalEventListener;
 
 import java.util.List;
 import java.util.Map;

@@ -1,5 +1,7 @@
 package com.zz.canal.client.annotation;
 
+import com.zz.canal.client.config.CanalClientConfiguration;
+import com.zz.canal.client.config.CanalConfig;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;
@@ -13,6 +15,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited
-@Import({})
+@Import({CanalConfig.class, CanalClientConfiguration.class})
 public @interface EnableCanalClient {
 }

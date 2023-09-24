@@ -1,8 +1,9 @@
-package com.zz.canal.client.client.utils;
+package com.zz.canal.client.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.Annotation;
@@ -15,24 +16,34 @@ import java.util.Map;
  * @Author: 张卫刚
  * @Date: 2023/9/17 22:12
  */
-@Component
-public class BeanUtil implements ApplicationContextAware {
 
-    private static ApplicationContext applicationContext;
+
+@Component
+public class ApplicationContextUtil implements ApplicationContextAware {
+
+    private static ApplicationContext applicationContext = null;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        BeanUtil.applicationContext = applicationContext;
+        if (ApplicationContextUtil.applicationContext == null) {
+            ApplicationContextUtil.applicationContext = applicationContext;
+        }
+    }
+
+    public static ApplicationContext getApplicationContext() {
+        return applicationContext;
+    }
+
+    public static Object getBean(String name) {
+        return getApplicationContext().getBean(name);
     }
 
     public static <T> T getBean(Class<T> clazz) {
-        T obj;
-        try {
-            obj = applicationContext.getBean(clazz);
-        } catch (Exception e) {
-            obj = null;
-        }
-        return obj;
+        return getApplicationContext().getBean(clazz);
+    }
+
+    public static <T> T getBean(String name, Class<T> clazz) {
+        return getApplicationContext().getBean(name, clazz);
     }
 
     public static <T> List<T> getBeansOfType(Class<T> clazz) {

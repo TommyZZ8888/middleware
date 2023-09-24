@@ -4,7 +4,7 @@ import com.alibaba.otter.canal.client.CanalConnector;
 import com.alibaba.otter.canal.protocol.Message;
 import com.zz.canal.client.client.ListenerPoint;
 import com.zz.canal.client.config.CanalConfig;
-import com.zz.canal.client.client.exception.CanalClientException;
+import com.alibaba.otter.canal.protocol.exception.CanalClientException;
 import com.zz.canal.client.event.CanalEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

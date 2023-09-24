@@ -1,8 +1,8 @@
 ## MQTT##
 mqtt:
-    host: tcp://192.168.10.198:1883
-    userName: root
-    passWord: 123456
+    host: tcp://127.0.0.1:1883
+    userName: admin
+    passWord: public
     qos: 1
     clientId: ClientId_local #ClientId_local必须唯一 比如你已经定了叫ABC  那你就一直叫ABC  其他地方就不要使用ABC了
     timeout: 10

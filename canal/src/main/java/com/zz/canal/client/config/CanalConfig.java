@@ -1,6 +1,10 @@
 package com.zz.canal.client.config;
 
+import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -16,9 +20,12 @@ import java.util.Set;
  * @Date: 2023/9/17 21:14
  */
 @Order(Ordered.HIGHEST_PRECEDENCE)
-@ConfigurationProperties(prefix = "canal.client")
 @Component
+@ConfigurationProperties(prefix = "canal.client")
 public class CanalConfig {
+
+//    @Autowired
+//    private Instance instance;
 
     private Map<String,Instance> instances = new LinkedHashMap<>();
 
@@ -32,7 +39,7 @@ public class CanalConfig {
 
     public static class Instance{
 
-        private String host;
+        public String host;
 
         private boolean clusterEnabled;
 
@@ -90,8 +97,8 @@ public class CanalConfig {
             return userName;
         }
 
-        public void setUsername(String username) {
-            this.userName = username;
+        public void setUserName(String userName) {
+            this.userName = userName;
         }
 
         public String getPassword() {

@@ -1,11 +1,11 @@
 package com.zz.canal.client.client;
 
 import com.alibaba.otter.canal.client.CanalConnector;
-import com.zz.canal.client.annotation.CanalEventListener;
 import com.zz.canal.client.annotation.ListenPoint;
 import com.zz.canal.client.client.transfer.TransponderFactory;
 import com.zz.canal.client.config.CanalConfig;
-import com.zz.canal.client.client.utils.BeanUtil;
+import com.zz.canal.client.event.CanalEventListener;
+import com.zz.canal.client.utils.ApplicationContextUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.AnnotatedElementUtils;
@@ -24,6 +24,7 @@ import java.util.concurrent.TimeUnit;
  * @Author: 张卫刚
  * @Date: 2023/9/17 22:09
  */
+
 public class SimpleCanalClient extends AbstractCanalClient{
 
 
@@ -68,11 +69,11 @@ public class SimpleCanalClient extends AbstractCanalClient{
      */
     private void initListeners() {
         logger.info("{}: initializing the listeners....", Thread.currentThread().getName());
-        List<CanalEventListener> list = BeanUtil.getBeansOfType(CanalEventListener.class);
+        List<CanalEventListener> list = ApplicationContextUtil.getBeansOfType(CanalEventListener.class);
         if (list != null) {
             listeners.addAll(list);
         }
-        Map<String, Object> listenerMap = BeanUtil.getBeansWithAnnotation(CanalEventListener.class);
+        Map<String, Object> listenerMap = ApplicationContextUtil.getBeansWithAnnotation(com.zz.canal.client.annotation.CanalEventListener.class);
         if (listenerMap != null) {
             for (Object target : listenerMap.values()) {
                 Method[] methods = target.getClass().getDeclaredMethods();
