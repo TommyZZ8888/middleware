@@ -1,0 +1,1 @@
+利用javacv解析rtsp流，转换为flv流，通过前端flv.js解析播放

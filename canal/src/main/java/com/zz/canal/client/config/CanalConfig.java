@@ -24,8 +24,6 @@ import java.util.Set;
 @ConfigurationProperties(prefix = "canal.client")
 public class CanalConfig {
 
-//    @Autowired
-//    private Instance instance;
 
     private Map<String,Instance> instances = new LinkedHashMap<>();
 
