@@ -1,6 +1,7 @@
 package com.zz.software.communication.socket;
 
-import org.json.simple.JSONObject;
+
+import cn.hutool.json.JSONObject;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;

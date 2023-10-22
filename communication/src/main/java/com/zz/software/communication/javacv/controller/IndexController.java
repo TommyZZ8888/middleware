@@ -107,7 +107,7 @@ public class IndexController {
     public static void main(String[] args) throws FileNotFoundException {
         IndexController indexController = new IndexController();
         AjaxResult ajaxResult = indexController.putVideoPath("F:\\Movies\\Friends\\S01\\S01E01.mp4");
-        indexController.write((int) ajaxResult.get("data"), new FileOutputStream("F:\\S01E01.flv"));
+//        indexController.write((int) ajaxResult.get("data"), new FileOutputStream("F:\\S01E01.flv"));
     }
 }
 
