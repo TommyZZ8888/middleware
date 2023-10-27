@@ -3,6 +3,7 @@ package com.zz.software.communication.websocket.rtsp;
 
 import com.zz.software.communication.websocket.domain.entity.Image;
 import com.zz.software.communication.websocket.server.WebSocketServer;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.bytedeco.javacv.FFmpegFrameGrabber;
 import org.bytedeco.javacv.Frame;
@@ -24,11 +25,12 @@ import java.io.IOException;
  * @Date: 2023/10/22 15:39
  */
 @Slf4j
-@Component
-@EnableAsync
+//@Component
+//@EnableAsync
 public class MediaTransfer {
 
-    @Value("${rtsp.url}")
+//    @Value("${rtsp.url}")
+    @Setter
     private String rtspUrl;
 
     @Value("${rtsp.transport.type}")

@@ -1,7 +1,7 @@
 package com.zz.software.communication.javacv.controller;
 
 import com.zz.software.communication.javacv.domain.AjaxResult;
-import com.zz.software.communication.javacv.domain.MediaVideoTransfer;
+import com.zz.software.communication.websocket.rtsp.MediaTransfer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +27,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Controller
 public class IndexController {
     AtomicInteger sign = new AtomicInteger();
-    ConcurrentHashMap<Integer, String> pathMap = new ConcurrentHashMap<>();
+    ConcurrentHashMap<Integer, String> pathMap = new ConcurrentHashMap<Integer, String>() {{
+        put(0, "rtsp://192.168.0.100/test");
+    }};
     ConcurrentHashMap<Integer, PipedOutputStream> outputStreamMap = new ConcurrentHashMap<>();
     ConcurrentHashMap<Integer, PipedInputStream> inputStreamMap = new ConcurrentHashMap<>();
 
@@ -65,10 +67,10 @@ public class IndexController {
         String path = pathMap.get(id);
         String fileName = UUID.randomUUID().toString();
         // 用于测试的时候，本地文件读取走这里
-        if (path.endsWith(".mp4")) {
-            String[] split = new File(path).getName().split("\\.");
-            fileName = split[0];
-        }
+//        if (path.endsWith(".mp4")) {
+//            String[] split = new File(path).getName().split("\\.");
+//            fileName = split[0];
+//        }
         response.addHeader("Content-Disposition", "attachment;filename=" + fileName + ".flv");
         try {
             ServletOutputStream outputStream = response.getOutputStream();
@@ -81,16 +83,18 @@ public class IndexController {
     private void write(int id, OutputStream outputStream) {
         try {
             String path = pathMap.get(id);
-            PipedOutputStream pipedOutputStream = outputStreamMap.get(id);
-            new Thread(() -> {
-                MediaVideoTransfer mediaVideoTransfer = new MediaVideoTransfer();
-                mediaVideoTransfer.setOutputStream(pipedOutputStream);
-                mediaVideoTransfer.setRtspTransportType("udp");
+//            PipedOutputStream pipedOutputStream = outputStreamMap.get(id);
+//            new Thread(() -> {
+                MediaTransfer mediaVideoTransfer = new MediaTransfer();
+//                mediaVideoTransfer.setOutputStream(pipedOutputStream);
+//                mediaVideoTransfer.setRtspTransportType("udp");
                 mediaVideoTransfer.setRtspUrl(path);
                 mediaVideoTransfer.live();
-            }).start();
-
-            print(inputStreamMap.get(id), outputStream);
+//            }).start();
+            PipedOutputStream pipedOutputStream = new PipedOutputStream();
+            PipedInputStream pipedInputStream = new PipedInputStream();
+            pipedOutputStream.connect(pipedInputStream);
+            print(pipedInputStream, outputStream);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }

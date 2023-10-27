@@ -11,7 +11,8 @@
 <th:block th:include="include :: footer"/>
 <script src="../static/js/workbench/WebSocket.js" th:src="@{/js/workbench/WebSocket.js}"></script>
 <script th:inline="javascript">
-    var wsUrl = getWsPath() + "/webSocketService";
+    // var wsUrl = getWsPath() + "/webSocketService";
+    var wsUrl ="172.16.16.222:8099/webSocketService";
     //建立连接
     var ws1 = new Ws({
         host: ""
@@ -22,11 +23,12 @@
             var data = JSON.parse(message);
             if (data.code === 0) {
                 console.log(message)
-            } else if (data.code === 201) {
+            } else if (data.code === 1) {
                 $("#show_video").attr("src", "data:image/*;base64," + data.data)
             }
         }
     });
+    // ws1.send("rtsp://192.168.0.100/test");
 
 </script>
 </body>

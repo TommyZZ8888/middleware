@@ -65,8 +65,8 @@
 <script th:src="@{/js/video/flv.js}" src="../static/js/video/flv.js"></script>
 <script th:inline="javascript">
     let videoElement = document.getElementById('videoElement');
-
-    function resetUrl(url) {
+    resetUrl();
+    function resetUrl() {
         if (flvjs.isSupported()) {
             let flvPlayer = flvjs.createPlayer({
                 type: 'flv',
@@ -100,26 +100,26 @@
         videoElement.currentTime = parseFloat(document.getElementsByName('seekpoint')[0].value);
     }
 
-    function changePath() {
-        let path = $("#video_path").val();
-        if (path === null || path === "") {
-            alert("请输入地址")
-            return
-        }
-        $.ajax({
-            type: "POST",
-            url: ctx + "putVideo",
-            data: {path: path},
-            success: function (result) {
-                if (result.code === 0) {
-                    resetUrl(ctx + "getVideo?id=" + result.data)
-                }
-            },
-            error: function () {
-                alert("请求出错")
-            }
-        })
-    }
+    // function changePath() {
+    //     let path = $("#video_path").val();
+    //     if (path === null || path === "") {
+    //         alert("请输入地址")
+    //         return
+    //     }
+    //     $.ajax({
+    //         type: "POST",
+    //         url: ctx + "putVideo",
+    //         data: {path: path},
+    //         success: function (result) {
+    //             if (result.code === 0) {
+    //                 resetUrl(ctx + "getVideo?id=" + result.data)
+    //             }
+    //         },
+    //         error: function () {
+    //             alert("请求出错")
+    //         }
+    //     })
+    // }
 </script>
 </body>
 </html>

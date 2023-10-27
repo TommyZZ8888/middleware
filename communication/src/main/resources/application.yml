@@ -47,7 +47,7 @@ spring:
       enabled: true
 
 rtsp:
-  enabled: false # 是否开启rtsp启动读取，设置为true才会在启动时读取地址，香前端通过websocket发送视频帧
-  url: F:/Movies/Friends/S01/S01E01.mp4
+  enabled: true # 是否开启rtsp启动读取，设置为true才会在启动时读取地址，香前端通过websocket发送视频帧
+  url: rtsp://192.168.0.100/test
   transport:
     type: udp
