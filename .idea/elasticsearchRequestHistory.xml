@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ElasticsearchRequestHistory">
+    <option name="requestHistory">
+      <map>
+        <entry key="740d055a-3a36-44fd-92fe-0bd9bd4be78c">
+          <value>
+            <list>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;from&quot;: 0,&#10;  &quot;size&quot;: 50,&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {}&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;from&quot;: 0,&#10;  &quot;size&quot;: 50,&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {}&#10;  }&#10;}" />
+                <option name="path" value="/jd_goods/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;from&quot;: 0,&#10;  &quot;size&quot;: 50,&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {}&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="path" value="/bulk/_settings" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="path" value="/bulk/_mappings" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;from&quot;: 0,&#10;  &quot;size&quot;: 50,&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {}&#10;  }&#10;}" />
+                <option name="path" value="/bulk/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="method" value="DELETE" />
+                <option name="path" value="/user" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="path" value="/user/_mappings" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="path" value="/user/_settings" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="path" value="/user/_mapping" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;&quot;aggs&quot;: {&#10;  &quot;group_by_name&quot;: {&#10;    &quot;terms&quot;: {&#10;      &quot;field&quot;: &quot;name.keyword&quot;&#10;    }&#10;  }&#10;}&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;&quot;aggs&quot;: {&#10;  &quot;group_by_name&quot;: {&#10;    &quot;terms&quot;: {&#10;      &quot;field&quot;: &quot;name&quot;&#10;    }&#10;  }&#10;}&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;from&quot;: 0,&#10;  &quot;size&quot;: 50,&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {}&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;bool&quot;: {&#10;      &quot;must&quot;: [&#10;        {&#10;          &quot;match&quot;: {&#10;            &quot;name&quot;: &quot;tom&quot;&#10;          }&#10;        }&#10;      ],&#10;      &quot;filter&quot;: [&#10;        {&#10;          &quot;term&quot;: {&#10;            &quot;age&quot;: {&#10;              &quot;value&quot;: &quot;20&quot;&#10;            }&#10;          }&#10;        }&#10;      ]&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;bool&quot;: {&#10;      &quot;must&quot;: [&#10;        {&#10;          &quot;match&quot;: {&#10;            &quot;name&quot;: &quot;tom&quot;&#10;          }&#10;        }&#10;      ],&#10;      &quot;filter&quot;: [&#10;        {&#10;          &quot;term&quot;: {&#10;            &quot;age&quot;: {&#10;              &quot;value&quot;: &quot;21&quot;&#10;            }&#10;          }&#10;        }&#10;      ]&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;bool&quot;: {&#10;      &quot;must&quot;: [&#10;        {&#10;          &quot;match&quot;: {&#10;            &quot;name&quot;: &quot;tom&quot;&#10;          }&#10;        }&#10;      ],&#10;      &quot;must_not&quot;: [&#10;        {&#10;          &quot;match&quot;: {&#10;            &quot;age&quot;: &quot;19&quot;&#10;          }&#10;        }&#10;      ]&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;bool&quot;: {&#10;      &quot;must&quot;: [&#10;        {&#10;          &quot;match&quot;: {&#10;            &quot;name&quot;: &quot;tom&quot;&#10;          }&#10;        }&#10;      ],&#10;      &quot;must_not&quot;: [&#10;        {&#10;          &quot;match&quot;: {&#10;            &quot;age&quot;: &quot;18&quot;&#10;          }&#10;        }&#10;      ]&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;bool&quot;: {&#10;      &quot;must&quot;: [&#10;        {&#10;          &quot;match&quot;: {&#10;            &quot;name&quot;: &quot;tom&quot;&#10;          }&#10;        }&#10;      ],&#10;      &quot;must_not&quot;: [&#10;        {&#10;          &quot;match&quot;: {&#10;            &quot;age&quot;: &quot;21&quot;&#10;          }&#10;        }&#10;      ]&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;bool&quot;: {&#10;      &quot;must&quot;: [&#10;        {&#10;          &quot;match&quot;: {&#10;            &quot;name&quot;: &quot;tom&quot;&#10;          }&#10;        }&#10;      ],&#10;      &quot;must_not&quot;: [&#10;        {&#10;          &quot;match&quot;: {&#10;            &quot;age&quot;: 21&#10;          }&#10;        }&#10;      ]&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;bool&quot;: {&#10;      &quot;must&quot;: [&#10;        {&#10;          &quot;match&quot;: {&#10;            &quot;name&quot;: &quot;tom&quot;&#10;          }&#10;        }&#10;      ],&#10;      &quot;must_not&quot;: [&#10;        {&#10;          &quot;match&quot;: {&#10;            &quot;age&quot;: 18&#10;          }&#10;        }&#10;      ]&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;bool&quot;: {&#10;      &quot;must&quot;: [&#10;        {&#10;          &quot;name&quot;: &quot;tom&quot;&#10;        }&#10;      ],&#10;      &quot;must_not&quot;: [&#10;        {&#10;          &quot;age&quot;: 18&#10;        }&#10;      ]&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {&#10;    }&#10;  },&#10;  &quot;sort&quot;: {&#10;    &quot;age&quot;: &quot;asc&quot;&#10;  },&#10;  &quot;from&quot;: 0,&#10;  &quot;size&quot;: 1&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;bool&quot;: {&#10;      &quot;must&quot;: [&#10;        {&#10;          &quot;name&quot;: &quot;tom&quot;&#10;        }&#10;      ],&#10;      &quot;must_not&quot;: [&#10;        {&#10;          &quot;age&quot;: &quot;18&quot;&#10;        }&#10;      ]&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;match_phrase&quot;: {&#10;      &quot;name&quot;: &quot;aliee&quot;&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;match_phrase&quot;: {&#10;      &quot;name&quot;: &quot;aliee tom&quot;&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="path" value="/user/_mapping" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="path" value="/user/user/1" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="method" value="POST" />
+                <option name="path" value="/user/user/1" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;match&quot;: {&#10;      &quot;name&quot;: &quot;aliee tom&quot;&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {&#10;    }&#10;  },&#10;  &quot;sort&quot;: {&#10;    &quot;age&quot;: &quot;asc&quot;&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="path" value="/user/user/1" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;&quot;age&quot;: 20,&#10;  &quot;name&quot;: &quot;aliee&quot;&#10;}" />
+                <option name="method" value="POST" />
+                <option name="path" value="/user/user/qM8ItI8Bc8626luMln0H" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;&quot;age&quot;: 20,&#10;  &quot;name&quot;: &quot;aliee&quot;&#10;}" />
+                <option name="method" value="POST" />
+                <option name="path" value="/user/1" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;&quot;age&quot;: 20,&#10;  &quot;name&quot;: &quot;aliee&quot;&#10;}" />
+                <option name="method" value="POST" />
+                <option name="path" value="/user/qM8ItI8Bc8626luMln0H" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;from&quot;: 0,&#10;  &quot;size&quot;: 50,&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {}&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="path" value="/jd_goods/_doc/pmt-64ABb72-xNoM3Mxy" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="path" value="/jd_goods/_analyze" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {&#10;    }&#10;  },&#10;  &quot;sort&quot;: {&#10;    &quot;price&quot;: &quot;asc&quot;&#10;  }&#10;}" />
+                <option name="path" value="/jd_goods/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/jd_goods/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &#10;}" />
+                <option name="path" value="/jd_goods/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {&#10;    }&#10;  }&#10;}" />
+                <option name="path" value="/jd_goods/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="path" value="/jd_goods/_doc/pmt-64ABb72-xNoM3Mxy" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="path" value="/jd_goods/_doc" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;from&quot;: 0,&#10;  &quot;size&quot;: 50,&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {}&#10;  }&#10;}" />
+                <option name="path" value="/jd_goods/_search" />
+              </HistoryRequest>
+              <HistoryRequest>
+                <option name="body" value="{&#10;  &quot;from&quot;: 0,&#10;  &quot;size&quot;: 50,&#10;  &quot;query&quot;: {&#10;    &quot;match_all&quot;: {}&#10;  }&#10;}" />
+                <option name="path" value="/user/_search" />
+              </HistoryRequest>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -2,6 +2,7 @@ package com.zzz.elasticsearch;
 
 import com.alibaba.fastjson2.JSON;
 import com.zzz.elasticsearch.start.domain.User;
+import com.zzz.elasticsearch.start.service.EsService;
 import org.apache.lucene.util.QueryBuilder;
 import org.elasticsearch.action.ActionListener;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
@@ -27,11 +28,15 @@ import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.core.IndexInformation;
 import org.springframework.data.elasticsearch.core.IndexOperations;
 import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
+import org.springframework.data.elasticsearch.core.query.Criteria;
+import org.springframework.data.elasticsearch.core.query.CriteriaQuery;
 import org.springframework.data.elasticsearch.core.query.IndexQuery;
+import org.springframework.data.elasticsearch.core.query.Query;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,9 +53,19 @@ class ElasticsearchApplicationTests {
     @Autowired
     private ElasticsearchRestTemplate elasticsearchRestTemplate;
 
+    @Autowired
+    private EsService esService;
+
+    @Autowired
+    private ElasticsearchOperations elasticsearchOperations;
+    @Test
+    public void test() throws IOException {
+        esService.insert();
+    }
+
     @Test
     void contextLoads() throws IOException {
-        GetIndexRequest getIndexRequest = new GetIndexRequest("test1");
+        GetIndexRequest getIndexRequest = new GetIndexRequest("user");
         boolean exists = client.indices().exists(getIndexRequest, RequestOptions.DEFAULT);
         System.out.println(exists);
     }
@@ -59,7 +74,7 @@ class ElasticsearchApplicationTests {
     void testQuery(){
         IndexQuery indexQuery = new IndexQuery();
         indexQuery.setSource(JSON.toJSONString(new User("用户1",1)));
-        String indexOperations = elasticsearchRestTemplate.doIndex(indexQuery,IndexCoordinates.of("test1"));
+        String indexOperations = elasticsearchRestTemplate.doIndex(indexQuery,IndexCoordinates.of("user"));
         System.out.println(indexOperations);
     }
 
@@ -77,19 +92,19 @@ class ElasticsearchApplicationTests {
 
             }
         };
-        GetRequest getRequest = new GetRequest("test1","1");
+        GetRequest getRequest = new GetRequest("user","1");
         GetResponse response = client.get(getRequest, RequestOptions.DEFAULT);
         System.out.println(JSON.toJSONString(response.getIndex()));
     }
 
     @Test
     void testDelete() throws IOException {
-        GetIndexRequest getIndexRequest = new GetIndexRequest("test1");
+        GetIndexRequest getIndexRequest = new GetIndexRequest("user");
         if (client.indices().exists(getIndexRequest, RequestOptions.DEFAULT)) {
-            DeleteIndexRequest request = new DeleteIndexRequest("test1");
+            DeleteIndexRequest request = new DeleteIndexRequest("user");
             System.out.println(client.indices().delete(request, RequestOptions.DEFAULT));
         }
-        GetIndexRequest getIndexRequest2 = new GetIndexRequest("test1");
+        GetIndexRequest getIndexRequest2 = new GetIndexRequest("user");
         System.out.println(client.indices().exists(getIndexRequest, RequestOptions.DEFAULT));
     }
 
@@ -99,7 +114,7 @@ class ElasticsearchApplicationTests {
     @Test
     void testAddDocument() throws IOException {
         User user = new User("狂神说java", 3);
-        IndexRequest request = new IndexRequest("test1");
+        IndexRequest request = new IndexRequest("user");
 
         request.id("1");
         IndexRequest source = request.source(JSON.toJSONString(user), XContentType.JSON);
@@ -110,7 +125,7 @@ class ElasticsearchApplicationTests {
 
     @Test
    void testAddDocument1(){
-       String result = elasticsearchRestTemplate.delete("33aZSooBtN_6yOgn2d52", IndexCoordinates.of("test1"));
+       String result = elasticsearchRestTemplate.delete("33aZSooBtN_6yOgn2d52", IndexCoordinates.of("user"));
        System.out.println(result);
    }
 
@@ -118,7 +133,7 @@ class ElasticsearchApplicationTests {
     @Test
     void testUpdateDocument() throws IOException {
         User user = new User("张三", 8);
-        UpdateRequest request = new UpdateRequest("test1", "1");
+        UpdateRequest request = new UpdateRequest("user", "1");
         UpdateRequest updateRequest = request.doc(JSON.toJSONString(user), XContentType.JSON);
         UpdateResponse response = client.update(updateRequest, RequestOptions.DEFAULT);
         System.out.println(response.status());
@@ -132,7 +147,7 @@ class ElasticsearchApplicationTests {
             list.add(new User("用户" + item, item));
         });
         for (int i = 0; i < list.size(); i++) {
-            IndexRequest request = new IndexRequest("test1")
+            IndexRequest request = new IndexRequest("user")
                     .id(String.valueOf(i+1))
                     .source(JSON.toJSONString(list.get(i)),XContentType.JSON);
             bulkRequest.add(request);
@@ -145,7 +160,7 @@ class ElasticsearchApplicationTests {
 
 	@Test
 	void testSearch() throws IOException {
-        SearchRequest searchRequest = new SearchRequest("test1");
+        SearchRequest searchRequest = new SearchRequest("user");
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
         TermQueryBuilder termQuery = QueryBuilders.termQuery("name", "用户");
 //        MatchQueryBuilder matchQueryBuilder = QueryBuilders.matchQuery("name", "用户");
@@ -158,6 +173,30 @@ class ElasticsearchApplicationTests {
         for (SearchHit hit : response.getHits().getHits()) {
             System.out.println(hit.getSourceAsMap());
         }
+    }
+
+
+    /**/////////////////////////////// elasticsearchOperations ///////////////////////////////////////////*/
+    @Test
+     void insert() throws IOException {
+        IndexCoordinates indexCoordinates =  IndexCoordinates.of("user");
+        boolean exists = elasticsearchOperations.exists("sAOLRZEBPeo7fepiYs37", indexCoordinates);
+        System.out.println(exists);
+        User user = new User("zhangsan", 22);
+        User save = elasticsearchOperations.save(user);
+        System.out.println(save.getAge());
+    }
+
+    @Test
+     void query() throws IOException {
+        User user = elasticsearchOperations.get("sAOLRZEBPeo7fepiYs37", User.class);
+        System.out.println(user.getAge());
+
+        Criteria criteria = new Criteria("age").is(1);
+        Query query = new CriteriaQuery(criteria);
+        org.springframework.data.elasticsearch.core.SearchHit<User> userSearchHit = elasticsearchOperations.searchOne(query, User.class);
+        User content = userSearchHit.getContent();
+        System.out.println(content.getAge());
     }
 
 }

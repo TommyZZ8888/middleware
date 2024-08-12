@@ -1,6 +1,0 @@
-server:
-    port: 8079
-spring:
-    elasticsearch:
-        rest:
-            uris: http://localhost:9500

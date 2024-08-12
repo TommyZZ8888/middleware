@@ -15,9 +15,9 @@ public class KafkaApplication {
         SpringApplication.run(KafkaApplication.class, args);
     }
 
-//    @Bean
-//    CommandLineRunner commandLineRunner(KafkaTemplate<String,String> kafkaTemplate){
-//        return args -> kafkaTemplate.send("kafka_topic","commandLineRunner");
-//    }
+    @Bean
+    CommandLineRunner commandLineRunner(KafkaTemplate<String,String> kafkaTemplate){
+        return args -> kafkaTemplate.send("kafka_topic","commandLineRunner");
+    }
 
 }
